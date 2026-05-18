@@ -15,13 +15,13 @@ Each challenge includes:
 ---
 ### 🧪 Challenges
 
-- [Brute Force](challenges/brute-force/)
-- [Command Injection](challenges/command-injection/)
-- [CSRF (Cross-Site Request Forgery)](challenges/csrf/)
-- [File Inclusion](challenges/file-inclusion/)
-- [File Upload](challenges/file-upload/)
-- [Insecure CAPTCHA](challenges/insecure-captcha/)
-- [SQL Injection](challenges/sql-injection/)
-- [SQL Injection (Blind)](challenges/sql-blind/)
-- [XSS (Reflected)](challenges/xss-reflected/)
-- [XSS (Stored)](challenges/xss-stored/)
+- [Brute Force](vulnerabilities/brute-force/)
+- [Command Injection](vulnerabilities/command-injection/)
+- [CSRF (Cross-Site Request Forgery)](vulnerabilities/csrf/)
+- [File Inclusion](vulnerabilities/file-inclusion/)
+- [File Upload](vulnerabilities/file-upload/)
+- [Insecure CAPTCHA](vulnerabilities/insecure-captcha/)
+- [SQL Injection](vulnerabilities/sql-injection/)
+- [SQL Injection (Blind)](vulnerabilities/sql-blind/)
+- [XSS (Reflected)](vulnerabilities/xss-reflected/)
+- [XSS (Stored)](vulnerabilities/xss-stored/)
