@@ -19,7 +19,7 @@ Each challenge includes:
 - [Command Injection](vulnerabilities/command-injection/)
 - [CSRF (Cross-Site Request Forgery)](vulnerabilities/csrf/)
 - [File Inclusion](vulnerabilities/file-inclusion/)
-- [File Upload](vulnerabilities/file-upload/)
+- [File Upload](vulnerabilities/file-upload)
 - [Insecure CAPTCHA](vulnerabilities/insecure-captcha/)
 - [SQL Injection](vulnerabilities/sql-injection/)
 - [SQL Injection (Blind)](vulnerabilities/sql-blind/)
